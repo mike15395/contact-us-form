@@ -16,6 +16,7 @@
 
 body{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -25,35 +26,137 @@ body{
 
 main{
     background-color: white;
-    padding: 3%;
+    padding: 2%;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
     border-radius: 10px;
-    max-width: 600px;
+    max-width: 800px;
+    font-size: 16px;
+    
 }
 sup{
     color: var(--green-medium);
 }
-.name-section,.query-sub-container{
+.name-section{
     display: flex;
-    gap:20px;
+    justify-content: space-between;
+}
+
+.query-sub-container{
+    display: flex;
+    gap: 20px;
+}
+
+.terms-sub-container{
+    display: flex;
+    gap: 10px;
 }
 
 .name-section > .first-name-section,.last-name-section{
     display: flex;
     flex-direction: column;
+    gap: 7px;
 
 }
 
 .email-section,.query-section,.message-section,.terms-condition-section{
     display: flex;
     flex-direction: column;
+    gap: 7px;
+}
+
+input[type="text"],input[type="email"]{
+    padding: 2%;
+    border-radius: 5px;
+    border: 1px solid gray; 
+}
+
+textarea{
+    border-radius: 5px;
+
+}
+
+input:focus,textarea:focus,button:focus{
+    outline: none;
+    border: 2px solid var(--green-medium);
+
+}
+
+input[type="checkbox"]:focus,input[type="radio"]:focus{
+    outline: 2px solid var(--green-medium);
 }
 
 
 
+.general-section,.support-section{
+    border: 1px solid gray;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+}
+
+.submit-button{
+    cursor: pointer;
+    background-color: var(--green-medium);
+    color: white;
+    padding: 3%;
+    border: none;
+    border-radius: 5px;
+    font-family: "Karla";
+    font-weight: 600;
+}
+
+.submit-button:hover{
+    background-color: var(--grey-dark);
+}
+
 .error{
-    
+    display: none;
     color: var(--red);
+}
+
+.success-message{
+    width: 470px;
+    height: 100px;
+    background-color: var(--grey-dark);
+    color: white;
+    font-family: "Karla";
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 10px;
+    padding: 2%;
+    margin-top: 55px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.success-message .message-sent-container{
+    display: flex;
+    gap:15px;
+}
+
+@media all and (max-width:450px){
+    main{
+        max-width: 400px;
+        overflow-y: scroll;
+    }
+    .name-section,.query-sub-container{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .success-message{
+        max-width: 350px;
+        max-height: 100px;
+        margin-top: 100px;
+        padding: 3%;
+        
+    }
+
 }

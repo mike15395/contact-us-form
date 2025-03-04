@@ -11,26 +11,30 @@
  
 </head>
 <body>
-
+  <div class="success-message" aria-label="success-message-sent">
+    <div class="message-sent-container"> <img src="./assets/images/icon-success-check.svg" alt="icon-success-check"><b>Message Sent!</b></div>
+    <p class="thanks-text">Thanks for completing the form. We'll be in touch soon!</p>
+  </div>
   <main>
+    
     <h1>Contact Us</h1>
     <section class="name-section">
       <div class="first-name-section">
         <label for="first-name">First Name <sup>*</sup></label>
-        <input type="text" name="first-name" autocomplete="on" aria-describedby="first-name" class="first-name" required/>
-        <span class="error error-first-name">This field is required</span>
+        <input type="text" name="first-name" autocomplete="on" aria-describedby="first-name" class="first-name" aria-label="first-name-input" required/>
+        <span class="error" id="error-first-name">This field is required</span>
       </div>
       <div class="last-name-section">
         <label for="last-name">Last Name <sup>*</sup></label>
-        <input type="text" name="last-name" autocomplete="on" aria-describedby="last-name" required>
-        <span class="error error-last-name">This field is required</span>
+        <input type="text" name="last-name" autocomplete="on" aria-describedby="last-name" class="last-name" aria-label="last-name-input" required>
+        <span class="error" id="error-last-name">This field is required</span>
       </div>
     </section>
     <section class="email-section">
       <label for="email">Email Address<sup>*</sup></label>
-      <input type="email" name="email" aria-describedby="email-address" autocomplete="on" class="email" required/>
-      <span class="error error-invalid-email">Please enter a valid email address</span>
-      <span class="error error-email-required">This field is required</span>
+      <input type="email" name="email" aria-describedby="email-address" autocomplete="on" class="email" aria-label="email-address-input" required/>
+      <span class="error" id="error-email-incorrect">Please enter a valid email address</span>
+      <span class="error" id="error-email-required">This field is required</span>
     </section>
     <section class="query-section">
       <span class="query-type-text">Query Type<sup>*</sup></span>
@@ -44,26 +48,23 @@
           <label for="support">Support Request</label>
         </div>
       </div>
-      <span class=" error error-query-type">Please select a query type</span>
+      <span class=" error" id="error-query-type">Please select a query type</span>
     </section>
     <section class="message-section">
       <label for="message-text-area">Message<sup>*</sup></label>
       <textarea name="message-text" id="message-text-area" rows="5" cols="40" aria-describedby="message-text-area" required></textarea>
-      <span class="error error-message">This field is required</span>
+      <span class="error " id="error-message">This field is required</span>
     </section>
     <section class="terms-condition-section">
       <div class="terms-sub-container">
         <input type="checkbox" id="terms-consent" aria-describedby="terms-consent-checbox">
         <label for="terms-consent">I consent to being contacted by the team<sup>*</sup></label>
       </div>
-      <span class="error error-terms-consent">To submit this form, please consent to being contacted</span>
+      <span class="error" id="error-terms-consent">To submit this form, please consent to being contacted</span>
     </section>
     
     <button class="submit-button">Submit</button>
-    <!-- <div class="success-message">
-      Message Sent!
-      Thanks for completing the form. We'll be in touch soon!
-    </div> -->
+    
   </main>
   <script src="./script.js"></script>
   
